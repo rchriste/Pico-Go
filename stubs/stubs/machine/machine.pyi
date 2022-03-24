@@ -143,6 +143,13 @@ class Pin:
             is set high, otherwise it is set low.
         """
 
+    def __call__(self) -> int:
+       """
+       Pin objects are callable. The call method provides a (fast) shortcut to set and
+       get the value of the pin. It is equivalent to Pin.value([x]). See Pin.value() 
+       for more details.
+       """
+
     @overload
     def value(self, value: Any, /) -> None:
         """
@@ -154,6 +161,13 @@ class Pin:
             is set high, otherwise it is set low.
         """
 
+    def __call__(self, value:Any, /) -> None:
+       """
+       Pin objects are callable. The call method provides a (fast) shortcut to set and
+       get the value of the pin. It is equivalent to Pin.value([x]). See Pin.value() 
+       for more details.
+       """
+       
 class SPI:
    """
    SPI is a synchronous serial protocol that is driven by a master. At the
